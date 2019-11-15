@@ -3,19 +3,16 @@
 <% end %>
 <%= link_to 'New document', new_document_path, class: "btn btn-primary" %>
 <h1>Listing documents</h1>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-  </tr>
- 
-  <% @documents.each do |document| %>
+  <table>
     <tr>
-      <td><%= document.title %></td>
-      <td><%= document.description%></td>
-      <td><%= link_to 'Show', document_path(document) %></td>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
     </tr>
-  <% end %>
-</table>
+      <% @documents.each do |document| %>
+        <tr>
+          <td><%= link_to document.title, document_path(document) %></td>
+          <td><%= document.description.first(30)%></td>
+        </tr>
+      <% end %>
+  </table>
