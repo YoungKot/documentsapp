@@ -1,0 +1,18 @@
+
+<%= form_with scope: :document, url: documents_path, local: true do |form| %>
+    <p>
+        <strong>Title:</strong>
+        <%= @document.title %>
+    </p>
+    
+    <p>
+        <strong>Description:</strong>
+        <%= @document.description %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', documents_path %>
+<%= link_to 'Edit document', edit_document_path(@document), class: "btn btn-primary" %>
+<%= link_to 'Delete document', document_path(@document), method: :delete,
+data: { confirm: 'Are you sure?' },  class: "btn btn-primary" %>
+  

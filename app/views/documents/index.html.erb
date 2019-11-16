@@ -1,2 +1,18 @@
-
-<h1>Hello, Goddy!</h1>
+<% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<% end %>
+<%= link_to 'New document', new_document_path, class: "btn btn-primary" %>
+<h1>Listing documents</h1>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+      <% @documents.each do |document| %>
+        <tr>
+          <td><%= link_to document.title, document_path(document) %></td>
+          <td><%= document.description.first(30)%></td>
+        </tr>
+      <% end %>
+  </table>
