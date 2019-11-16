@@ -16,16 +16,25 @@
    
     <p>
       <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, class:"form-control"  %>
     </p>
    
     <p>
       <%= form.label :description %><br>
-      <%= form.text_area :description %>
+      <%= form.text_area :description, class:"form-control"  %>
+    </p>
+
+    <p>
+      <%= form.label :attachment %><br>
+      <%= form.text_area :attachment, class:"form-control" %>
+    </p>
+
+    <p class="field">
+      <%= form.file_field :attachment %>
     </p>
    
     <p>
-      <%= form.submit %>
+      <%= form.submit "Update file", class: "btn btn-success"  %>
     </p>
    
   <% end %>

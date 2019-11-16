@@ -1,16 +1,20 @@
-
+<h1>New Document</h1>
 <%= form_with scope: :document, url: documents_path, local: true do |form| %>
     <p>
       <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, class:"form-control" %>
     </p>
    
     <p>
       <%= form.label :description %><br>
-      <%= form.text_area :description %>
+      <%= form.text_area :description, class:"form-control" %>
     </p>
-   
+
     <p>
-      <%= form.submit %>
+      <%= form.file_field :attachment %>
+    </p>
+    
+    <p class="actions">
+      <%= form.submit "Save document",  class: "btn btn-secondary" %>
     </p>
   <% end %>
