@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave', '~> 0.9'
+gem 'carrierwave', '~> 1.3'
 gem 'devise'
 gem 'jquery-rails'
 gem 'rubocop', '~> 0.76.0', require: false
